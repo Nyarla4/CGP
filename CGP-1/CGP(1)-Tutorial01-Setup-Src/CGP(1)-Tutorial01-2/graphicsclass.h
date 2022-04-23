@@ -1,0 +1,44 @@
+////////////////////////////////////////////////////////////////////////////////
+// Filename: graphicsclass.h
+////////////////////////////////////////////////////////////////////////////////
+#ifndef _GRAPHICSCLASS_H_
+#define _GRAPHICSCLASS_H_
+//그래픽 관련은 이것의 하위
+
+//////////////
+// INCLUDES //
+//////////////
+#include <windows.h>
+
+
+/////////////
+// GLOBALS //
+/////////////
+const bool FULL_SCREEN = false;//전체화면
+const bool VSYNC_ENABLED = true;//수직싱크
+const float SCREEN_DEPTH = 1000.0f;//(좌표계 기준에서)얼마나 깊은가
+const float SCREEN_NEAR = 0.1f;//(좌표계 기준에서)얼마나 가까운가
+//0.1
+
+////////////////////////////////////////////////////////////////////////////////
+// Class name: GraphicsClass
+////////////////////////////////////////////////////////////////////////////////
+class GraphicsClass
+{
+public:
+	GraphicsClass();
+	GraphicsClass(const GraphicsClass&);
+	~GraphicsClass();
+
+	bool Initialize(int, int, HWND);//초기화
+	void Shutdown();//셧다운
+	bool Frame();//시스템의 run에 해당
+
+private:
+	bool Render();//렌더링!
+
+private:
+
+};
+
+#endif
